@@ -12,6 +12,18 @@ class ConnectFour:
         self.current_player = 'X'
         self.winner = None
 
+        self.play_move(5)
+        self.play_move(0)
+        self.play_move(5)
+        self.play_move(0)
+        self.play_move(5)
+        self.play_move(0)
+        a = self.play_move(5)
+        import pdb; pdb.set_trace()
+
+        
+
+
     def print_board(self):
         for row in self.board:
             print("| " + " | ".join(row) + " |")
@@ -68,6 +80,28 @@ class ConnectFour:
                     break
                 self.current_player = 'O' if self.current_player == 'X' else 'X'
 
+    def play_move(self, col, print = True):
+        '''
+        Play move manually.
+        '''
+        if self.make_move(col):
+            if self.check_winner():
+                if print:
+                    self.print_board()
+                return self.winner
+                
+            if all(cell != ' ' for row in self.board for cell in row):
+                if print:    
+                    self.print_board()
+                return 'draw'
+                
+            self.current_player = 'O' if self.current_player == 'X' else 'X'
+
+            if print:
+                self.print_board()
+
+
+
         
         
 
@@ -78,4 +112,4 @@ class ConnectFour:
 
 if __name__ == "__main__":
     c4 = ConnectFour()
-    c4.play_game()
+    # c4.play_game()
