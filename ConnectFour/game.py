@@ -12,18 +12,6 @@ class ConnectFour:
         self.current_player = 'X'
         self.winner = None
 
-        self.play_move(5)
-        self.play_move(0)
-        self.play_move(5)
-        self.play_move(0)
-        self.play_move(5)
-        self.play_move(0)
-        a = self.play_move(5)
-        import pdb; pdb.set_trace()
-
-        
-
-
     def print_board(self):
         for row in self.board:
             print("| " + " | ".join(row) + " |")
@@ -112,4 +100,4 @@ class ConnectFour:
 
 if __name__ == "__main__":
     c4 = ConnectFour()
-    # c4.play_game()
+    c4.play_game()
