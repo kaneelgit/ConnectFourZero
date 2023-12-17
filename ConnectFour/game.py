@@ -3,6 +3,9 @@ Author - Kaneel Senevirathne
 Date - 12/5/2023
 """
 
+import numpy as np
+import minimax
+
 class ConnectFour:
     
     def __init__(self):
@@ -11,6 +14,7 @@ class ConnectFour:
         self.board = [[' ' for _ in range(self.columns)] for _ in range(self.rows)]
         self.current_player = 'X'
         self.winner = None
+        import pdb; pdb.set_trace()
 
     def print_board(self):
         for row in self.board:
